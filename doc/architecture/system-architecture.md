@@ -4,13 +4,13 @@ This document outlines the architecture of the PhotoStore application, following
 
 ## 1. Context Diagram
 
-![Context Diagram](./assets/1.png)
+![Context Diagram](../assest/1.png)
 
 The PhotoStore application serves end users who want to upload, manage, and view their photos. It interfaces with MongoDB Atlas for data storage.
 
 ## 2. Container Diagram
 
-![Container Diagram](./assets/2.png)
+![Container Diagram](../assets/2.png)
 
 The system consists of three main containers:
 
@@ -35,7 +35,7 @@ Key components:
 
 ### Express API Components
 
-![Component Diagram](./assets/3.png)
+![Component Diagram](../assets/3.png)
 
 
 Key components:
