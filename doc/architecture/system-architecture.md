@@ -4,50 +4,13 @@ This document outlines the architecture of the PhotoStore application, following
 
 ## 1. Context Diagram
 
-```
-┌─────────────────────┐            ┌─────────────────────┐
-│                     │            │                     │
-│      End User       │─────────▶  │    PhotoStore       │
-│                     │            │    Application      │
-└─────────────────────┘            └──────────┬──────────┘
-                                              │
-                                              │
-                                              ▼
-                                    ┌─────────────────────┐
-                                    │                     │
-                                    │   MongoDB Atlas     │
-                                    │                     │
-                                    └─────────────────────┘
-```
+![Context Diagram](./assets/1.png)
 
 The PhotoStore application serves end users who want to upload, manage, and view their photos. It interfaces with MongoDB Atlas for data storage.
 
 ## 2. Container Diagram
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                                                                 │
-│                       PhotoStore System                         │
-│                                                                 │
-│  ┌─────────────────┐       ┌─────────────────┐                  │
-│  │                 │       │                 │                  │
-│  │  React Frontend │◀─────▶│  Express API    │                  │
-│  │  (Single Page   │       │  (RESTful       │                  │
-│  │   Application)  │       │   Services)     │                  │
-│  │                 │       │                 │                  │
-│  └─────────────────┘       └────────┬────────┘                  │
-│                                     │                           │
-│                                     │                           │
-│                                     ▼                           │
-│                            ┌─────────────────┐                  │
-│                            │                 │                  │
-│                            │  MongoDB Atlas  │                  │
-│                            │  (Database)     │                  │
-│                            │                 │                  │
-│                            └─────────────────┘                  │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+![Container Diagram](./assets/2.png)
 
 The system consists of three main containers:
 
@@ -61,27 +24,7 @@ The system consists of three main containers:
 
 ### React Frontend Components
 
-```
-┌──────────────────────────────────────────────────────────────────────────┐
-│                                                                          │
-│                            React Frontend                                │
-│                                                                          │
-│  ┌─────────────────┐      ┌─────────────────┐     ┌─────────────────┐    │
-│  │                 │      │                 │     │                 │    │
-│  │  Router         │─────▶│  Pages          │────▶│  Components     │    │
-│  │                 │      │                 │     │                 │    │
-│  └─────────────────┘      └─────────────────┘     └────────┬────────┘    │
-│                                                            │             │
-│                                                            │             │
-│                                                            ▼             │
-│                                                   ┌─────────────────┐    │
-│                                                   │                 │    │
-│                                                   │  API Services   │    │
-│                                                   │                 │    │
-│                                                   └─────────────────┘    │
-│                                                                          │
-└──────────────────────────────────────────────────────────────────────────┘
-```
+
 
 Key components:
 
@@ -92,28 +35,8 @@ Key components:
 
 ### Express API Components
 
-```
-┌────────────────────────────────────────────────────────────────────────┐
-│                                                                        │
-│                             Express API                                │
-│                                                                        │
-│  ┌─────────────────┐      ┌─────────────────┐    ┌─────────────────┐   │
-│  │                 │      │                 │    │                 │   │
-│  │  Route Handlers │─────▶│  Controllers    │───▶│  Models         │   │
-│  │                 │      │                 │    │                 │   │
-│  └─────────────────┘      └─────────────────┘    └────────┬────────┘   │
-│                                                           │            │
-│                                                           │            │
-│                                                           ▼            │
-│                                                  ┌─────────────────┐   │
-│                                                  │                 │   │
-│                                                  │  Database       │   │
-│                                                  │  Connection     │   │
-│                                                  │                 │   │
-│                                                  └─────────────────┘   │
-│                                                                        │
-└────────────────────────────────────────────────────────────────────────┘
-```
+![Component Diagram](./assets/3.png)
+
 
 Key components:
 
