@@ -10,7 +10,7 @@ The PhotoStore application serves end users who want to upload, manage, and view
 
 ## 2. Container Diagram
 
-![Container Diagram](../assets/2.png)
+![Container Diagram](../assets/2.PNG)
 
 The system consists of three main containers:
 
