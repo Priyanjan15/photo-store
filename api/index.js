@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 // Connect to MongoDB
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://malikwanigasinghe00:A5QWKTUvJ5C1PLra@cluster0.mpvq5q0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://malikwanigasinghe00:A5QWKTUvJ5C1PLra@cluster0.mpvq5q0.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0';
 
 mongoose.connect(MONGODB_URI)
   .then(() => console.log('Connected to MongoDB Atlas'))
@@ -130,6 +130,7 @@ app.get('/api/photos/:id', async (req, res) => {
 app.post('/api/photos', upload.single('image'), async (req, res) => {
   try {
     if (!req.file) {
+      console.error('No image uploaded:', req.body, req.files);
       return res.status(400).json({
         success: false,
         error: 'No image uploaded'
@@ -165,7 +166,7 @@ app.post('/api/photos', upload.single('image'), async (req, res) => {
       data: photo
     });
   } catch (error) {
-    console.error('Error creating photo:', error);
+    console.error('Error creating photo:', error, req.body, req.file);
     res.status(500).json({
       success: false,
       error: 'Failed to create photo'
