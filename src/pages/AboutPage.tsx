@@ -9,9 +9,8 @@ const AboutPage: React.FC = () => {
         
         <div className="bg-white rounded-lg shadow-md overflow-hidden p-6 mb-8">
           <p className="text-gray-600 mb-4">
-            PhotoStore is a Micro SaaS application developed as part of the Advanced DevOps Practices 
-            for Enterprise-Scale Micro SaaS Development course (IT31023). This application demonstrates 
-            the implementation of modern DevOps practices, secure architecture, and scalable design.
+            The Photo Store Interface is a backend API layer responsible for managing user-uploaded photos within the application. 
+            This interface is crucial for maintaining photo metadata and handling file uploads efficiently in a decoupled architecture.
           </p>
           
           <p className="text-gray-600">
@@ -98,7 +97,7 @@ const AboutPage: React.FC = () => {
             </li>
             <li className="flex items-center">
               <span className="w-32 font-medium">Deployment:</span>
-              <span>Vercel</span>
+              <span>Railway</span>
             </li>
           </ul>
         </div>
